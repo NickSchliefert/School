@@ -1,0 +1,70 @@
+basketball_scores = {'Luke' : 18, 'Nick' : 7, 'Ben': 10, 'Dylan' : 87, 'Liam' : 34, 'Jake' : 69,
+                     'Salmon' : 2, 'Ashley' : 120, 'Kirkus' : 1, 'Parlas' : -9}
+
+def menu():
+    print('''
+=====Player Points Dictionary=====
+    1. Add a player.
+    2. Delete a player.
+    3. Modify a player's points.
+    4. View all items.
+    5. Get a player's statistic.
+    6. View all player's.
+    7. View all point statistics.
+    8. Sort dictionary by player name.
+    9. Sort dictionary by point statistic.
+    10. Player lucky dip.
+    11. Clear the dictionary.
+    12. Exit.
+==================================
+''')
+
+def main():
+    menu()
+    option = int(input('Which option would you like to run? '))
+    print()
+
+    while option not in range(1, 11):
+        option = int(input('Which option would you like to run? '))
+        print()
+
+    if option in range(1, 11):
+        if option == 1:
+            name = str(input("What is the player's name? "))
+            points = int(input('How many points has {0} scored? '.format(name)))
+            basketball_scores[name] = points
+        elif option == 2:
+            name = str(input('Which player would you like to delete? '))
+            del basketball_scores[name]
+        elif option == 3:
+            name = str(input("Which player's points would you like to change? "))
+            points = int(input('How many points has {0} scored? '.format(name)))
+            basketball_scores[name] = points
+        elif option == 4:
+            print(dict.items(basketball_scores))
+        elif option == 5:
+            name = str(input("Which player's points would you like? "))
+            print('{0} has scored {1} points.'.format(name, basketball_scores.get(name)))
+        elif option == 6:
+            print(dict.keys(basketball_scores))
+        elif option == 7:
+            print(dict.values(basketball_scores))
+        elif option == 8:
+            # A dictionary has absolutely no order, the sorted dictionary is really an array with lists inside of it
+            # t[0] is the first item in the dictionary, so a player name. Therefore it will sort by name/string
+            sortedByNameDict = sorted(basketball_scores.items(), key = lambda t: t[0])
+            print(sortedByNameDict)
+        elif option == 9:
+            # t[1] is the second item in the dictionary, so a player's points. Therefore it will sort by points/integer.
+            sortedByPointsDict = sorted(basketball_scores.items(), key = lambda t: t[1])
+            # dictionary.reverse simply reverses the list so that it is in descending points order (largest to smallest)
+            sortedByPointsDict.reverse()
+            print(sortedByPointsDict)
+        elif option == 10:
+            print(dict.popitem(basketball_scores))
+        elif option == 11:
+            dict.clear(basketball_scores)
+        elif option == 12:
+            quit
+
+main()
