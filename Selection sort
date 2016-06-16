@@ -1,0 +1,28 @@
+import random
+#generate a list of random numbers
+
+mylist = []
+for item in range(0, 10):
+   mylist.append(random.randint(0,50))
+print('Unsorted list:', mylist )
+
+def selectionSort(alist):
+   #set the range to loop from start of list to the end of list
+   #using variable, curPos
+   for currentPos in range(len(alist)):
+       #set the position of lowest number to be at the start of the array
+       minPos = currentPos
+       #searchLoc - used to compare value at curPos with value at successive positions in list
+       for searchLoc in range(currentPos+1, len(alist)):
+           #Does this position contain a smaller value?
+           if alist[searchLoc] > alist[minPos]:
+               #Yes - mark this position as the smallest
+               minPos = searchLoc
+       #swap values at each position
+       temp = alist[currentPos]
+       alist[currentPos] = alist[minPos]
+       alist[minPos] = temp
+
+
+selectionSort(mylist)
+print('Sorted ascending:', mylist)
