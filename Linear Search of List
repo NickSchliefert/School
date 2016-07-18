@@ -1,0 +1,134 @@
+
+def linearSearchWhileWithFalse(targetValue, list):
+   found = False
+   i = 0
+   while i < len(list) and not found:
+       if list[i] == targetValue:
+           found = True
+       i += 1
+   return found
+
+def mainMenu():
+   data = input('Enter data separated by spaces.').split(' ')
+   while True:
+       print('\n1. Linear Search\n2. Exit')
+       choice = int(input('\nEnter your choice:'))
+       if choice == 1:
+           item = input('What do you want to find? ')
+           result = linearSearchWhileWithFalse(item, data)
+           if result:
+               print("Target '{0}' found." .format(item))
+           else:
+               print("Target '{0}' not found." .format(item))
+       elif choice == 2:
+           break
+       else:
+           print('Please enter a number')
+
+def main():
+   list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+   targetValue = input('What is the value you are looking for? ')
+   linearSearchFor(targetValue, list)
+
+def linearSearchFor(targetValue, list):
+
+   for item in range(0, len(list)):
+       if list[item] == targetValue:
+           print("Target '{0}' found." .format(targetValue))
+           return
+   print("Target '{0}' not found." .format(targetValue))
+
+def linearSearchWhile(targetValue, list):
+   i = 0
+   while i < len(list):
+       if list[i] == targetValue:
+           print("Target '{0}' found." .format(targetValue))
+           return
+       i += 1
+   print("Target '{0}' not found." .format(targetValue))
+
+def mainForFlag():
+   list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+   targetValue = input('What is the value you are looking for? ')
+   result = linearSearchForWithFlag(targetValue, list)
+   if result == 1:
+       print("Target '{0}' found." .format(targetValue))
+   else:
+       print("Target '{0}' not found." .format(targetValue))
+
+def linearSearchForWithFlag(targetValue, list):
+   flag = 0
+   for item in range(0, len(list)):
+       if list[item] == targetValue:
+           flag = 1
+           break
+   return flag
+
+def mainWhileFlag():
+   list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+   targetValue = input('What is the value you are looking for? ')
+   result = linearSearchForWithFlag(targetValue, list)
+   if result:
+       print("Target '{0}' found." .format(targetValue))
+   else:
+       print("Target '{0}' not found." .format(targetValue))
+
+def linearSearchWhileWithFalse(targetValue, list):
+   found = False
+   i = 0
+   while i < len(list) and not found:
+       if list[i] == targetValue:
+           found = True
+       i += 1
+   return found
+
+def mainMenu():
+   data = input('Enter data separated by spaces.').split(' ')
+   while True:
+       print('\n1. Linear Search\n2. Exit')
+       choice = int(input('\nEnter your choice:'))
+       if choice == 1:
+           item = input('What do you want to find? ')
+           result = linearSearchWhileWithFalse(item, data)
+           if result:
+               print("Target '{0}' found." .format(item))
+           else:
+               print("Target '{0}' not found in list." .format(item))
+       elif choice == 2:
+           break
+       else:
+           print('Please enter a number')
+
+mainMenu()
+
+def menu():
+   with open('menu.txt', mode = 'r') as infile:
+       for eachLine in infile:
+           eachLine = str(eachLine)
+           print(eachLine.rstrip('\n'))
+
+def linearSearchWhileWithFalse(targetValue, list):
+   found = False
+   i = 0
+   while i < len(list) and not found:
+       if list[i] == targetValue:
+           found = True
+       i += 1
+   return found
+
+def mainMenu():
+   data = input('Enter data separated by spaces.').split(' ')
+   while True:
+       print('\n1. Linear Search\n2. Exit')
+       choice = int(input('\nEnter your choice:'))
+       if choice == 1:
+           item = input('What do you want to find? ')
+           result = linearSearchWhileWithFalse(item, data)
+           if result:
+               print("Target '{0}' found." .format(item))
+           else:
+               print("Target '{0}' not found." .format(item))
+       elif choice == 2:
+           break
+       else:
+           print('Please enter a number')
