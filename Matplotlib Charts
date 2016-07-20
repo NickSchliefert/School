@@ -1,0 +1,128 @@
+import matplotlib.pyplot as plt
+
+
+# Define the function to create a line chart
+def lineChart():
+# Create the x and y variable lists
+    x = [1, 2, 3]
+    x2 = [1, 2, 3]
+
+    y = [4, 7, 5]
+    y2 = [10, 14, 12]
+
+# Plot the variables, label is the legend details
+    plt.plot(x, y, label = 'First Line')
+    plt.plot(x2, y2, label = 'Second Line')
+
+# Define the axis names
+    plt.xlabel('Plot Number')
+    plt.ylabel('Important Variable')
+
+# Create the legend
+    plt.legend()
+
+# Define the title/heading of the graph, \n creates a subheading
+    plt.title('Interesting Graph\nCool')
+# Initialising the chart to run
+    plt.show()
+
+
+def barChart():
+    x = [2, 4, 6, 8, 10]
+    y = [6, 7, 8, 2, 4]
+
+    x2 = [1, 3, 5, 7, 9]
+    y2 = [7, 8, 2, 4, 2]
+
+# Define the color of the bars
+    plt.bar(x, y, label = 'Bars1', color = 'cyan')
+    plt.bar(x2, y2, label = 'Bars2', color = 'red')
+
+    plt.xlabel('x')
+    plt.ylabel('y')
+
+    plt.legend()
+
+    plt.title('Interesting Graph\nCool')
+    plt.show()
+
+
+def histogramChart():
+# Create the variables list
+    population_ages = [22, 43, 35, 52, 77, 98, 120, 4, 65, 47, 45, 76, 70, 34, 53, 124, 132, 15, 85]
+
+# Bins are the x axis ranges. e.g 0 to 10, 10 to 20, in which the data falls within
+    bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+
+# Define the histogram type, and the bar width
+    plt.hist(population_ages, bins, histtype = 'bar', rwidth = 0.8, color = 'cyan', label = 'Bars1')
+
+    plt.xlabel('x')
+    plt.ylabel('y')
+
+    plt.legend()
+
+    plt.title('Interesting Graph\nCool')
+    plt.show()
+
+
+def scatterplotChart():
+    x = [1, 2, 3, 4, 5, 6, 7, 8]
+    y = [5, 3, 4, 6, 6, 8, 2, 3]
+
+# Define the market symbol, and s is the size of the markers
+    plt.scatter(x, y, label = 'Scatterplot', color = 'cyan', marker = '*', s = 100)
+
+    plt.xlabel('x')
+    plt.ylabel('y')
+
+    plt.legend()
+
+    plt.title('Interesting Graph\nCool')
+    plt.show()
+
+
+def stackplotChart():
+    days = [1, 2, 3, 4, 5]
+
+    sleeping = [7, 8, 6, 11, 7]
+    eating = [2, 3, 4, 3, 2]
+    working = [7, 8, 7, 2, 2]
+    playing = [8, 5, 7, 8, 13]
+
+# Define the width of the lines in the legend
+    plt.plot([], [], color = 'cyan', label = 'sleeping', linewidth = 5)
+    plt.plot([], [], color = 'red', label = 'eating', linewidth = 5)
+    plt.plot([], [], color = 'green', label = 'working', linewidth = 5)
+    plt.plot([], [], color = 'purple', label = 'playing', linewidth = 5)
+
+    plt.stackplot(days, sleeping, eating, working, playing, colors = ['cyan', 'red', 'green', 'purple'])
+
+    plt.xlabel('x')
+    plt.ylabel('y')
+
+    plt.legend()
+
+    plt.title('Interesting Graph\nCool')
+    plt.show()
+
+
+def pieChart():
+    days = [1, 2, 3, 4, 5]
+
+    sleeping = [7, 8, 6, 11, 7]
+    eating = [2, 3, 4, 3, 2]
+    working = [7, 8, 7, 2, 2]
+    playing = [8, 5, 7, 8, 13]
+
+# The data from the four activities on day 5
+    slices = [7, 2, 2, 13]
+    activities = ['sleeping', 'eating', 'working', 'playing']
+    colors = ['cyan', 'red', 'green', 'purple']
+
+# Define the start angle of the slices, shadow is the shadow of the graph, explode pulls out the slices of the graph,
+# autopct shows the percentages of each slice on the slice, 1.2f means two decimal places
+    plt.pie(slices, labels =  activities, colors = colors, startangle = 90, shadow = True, explode = (0, 0.2, 0, 0), autopct = '%1.2f%%')
+
+    plt.title('Interesting Graph\nCool')
+    plt.show()
